@@ -2,19 +2,22 @@
 
 #pragma once
 
+
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "StateParent.generated.h"
+//#include "FSMManager.h"
+
 
 /**
  * 
  */
-UCLASS()
+UCLASS(Blueprintable)
 class SUPERJEUDELOIE_API UStateParent : public UObject
 {
 	GENERATED_BODY()
-public :
-	virtual void EnterState();
-	virtual void Do();
-	virtual void ExitState();
+protected :
+	virtual void EnterState(AFSMManager stateMachine);
+	virtual void Do(AFSMManager stateMachine);
+	virtual void ExitState(AFSMManager stateMachine);
 };

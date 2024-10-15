@@ -3,12 +3,12 @@
 
 #include "StateParent.h"
 
-void UStateParent::EnterState()
+void UStateParent::EnterState(AFSMManager stateMachine)
 {
 }
-void UStateParent::Do()
+void UStateParent::Do(AFSMManager stateMachine)
 {
 }
-void UStateParent::ExitState()
+void UStateParent::ExitState(AFSMManager stateMachine)
 {
 }
