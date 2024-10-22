@@ -1,0 +1,19 @@
+Super Mémory
+
+NewMarseille cyberpunk
+Formulaire administratif et bureaux
+
+
+
+
+Un acteur qui représente les cases
+BP_MemoryCase
+boolean Revealed
+integer Pair // Pas besoin d'enum je pense juste un int devrait suffir
+
+
+Un acteur qui représente le jeu
+BP_MemoryGame
+tableau de BP_MemoryCase AllMemoryCase
+BP_MemoryCase FirstCaseRevealed
+BP_MemoryCase SecondCaseRevealed
