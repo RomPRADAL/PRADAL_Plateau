@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "StateParent.h"
 #include "GameFramework/Actor.h"
 #include "FSMManager.generated.h"
 
@@ -16,7 +17,7 @@ public:
 	AFSMManager();
 
 	UPROPERTY()
-	StateParent* CurrentState;
+	UStateParent* CurrentState;
 
 protected:
 	// Called when the game starts or when spawned
