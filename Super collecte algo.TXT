@@ -1,0 +1,20 @@
+CollecteManager
+Gere le jeu, se substitut au game mode
+
+
+PlayerScores Liste Int
+
+
+
+
+
+Collectable
+Objet à récupérer
+Value int
+
+
+
+CollectPawn
+Perso à déplacer
+
+
