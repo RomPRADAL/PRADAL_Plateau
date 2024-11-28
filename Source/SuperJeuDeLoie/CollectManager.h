@@ -3,8 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Collectable.h"
 #include "GameFramework/Actor.h"
+#include "Collectable.h"
 #include "CollectManager.generated.h"
 
 UCLASS()
@@ -15,7 +15,6 @@ class SUPERJEUDELOIE_API ACollectManager : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ACollectManager();
-	Collectable AllCollectables;
 
 protected:
 	// Called when the game starts or when spawned
@@ -24,5 +23,11 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<ACollectable*> CollectablesList;
+
+	UFUNCTION(BlueprintCallable)
+	void AddCollectable(ACollectable* pCollectable);
 
 };

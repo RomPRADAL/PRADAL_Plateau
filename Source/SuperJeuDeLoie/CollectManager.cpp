@@ -25,3 +25,10 @@ void ACollectManager::Tick(float DeltaTime)
 
 }
 
+void ACollectManager::AddCollectable(ACollectable* pCollectable)
+{
+	if (pCollectable)
+	{
+		CollectablesList.Add(pCollectable);
+	}
+}
