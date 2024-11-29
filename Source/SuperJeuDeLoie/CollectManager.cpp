@@ -3,6 +3,8 @@
 
 #include "CollectManager.h"
 
+#include "GameFramework/GameModeBase.h"
+
 // Sets default values
 ACollectManager::ACollectManager()
 {
@@ -46,7 +48,12 @@ bool ACollectManager::CheckWin()
 	{
 		vPallierAtteint = true;
 	}
-	
+
+	//Alors j'ai jamais testé avant on va voir si ca marche
+	AGameModeBase* GameMode = GetWorld()->GetAuthGameMode();
+	GameMode->ProcessEvent(GameMode->FindFunction("SwitchToDefaultPawn"), nullptr);
+	GameMode->ProcessEvent(GameMode->FindFunction("ShowInfoWidget"), nullptr);
+	GameMode->ProcessEvent(GameMode->FindFunction("MoveCameraToBoard"), nullptr);
 	return vPallierAtteint;
 }
 
