@@ -3,12 +3,14 @@
 
 #include "Collectable.h"
 
+
+
 // Sets default values
 ACollectable::ACollectable()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
+	Value = 1;
 }
 
 // Called when the game starts or when spawned
@@ -25,3 +27,11 @@ void ACollectable::Tick(float DeltaTime)
 
 }
 
+void ACollectable::Collect()
+{
+	if (CollectManager)
+	{
+		CollectManager->AddToScore(Value);
+	}
+	Destroy();
+}

@@ -3,8 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "CollectManager.h"
 #include "GameFramework/Actor.h"
 #include "Collectable.generated.h"
+
+//Sans ca ca risque de merder vu que les deux fichiers se font références
+class ACollectManager;
 
 UCLASS()
 class SUPERJEUDELOIE_API ACollectable : public AActor
@@ -27,5 +31,8 @@ public:
 	int Value;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FString Name;
+	ACollectManager* CollectManager;
+	
+	UFUNCTION(BlueprintCallable)
+	void Collect();
 };
