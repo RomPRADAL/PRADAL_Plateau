@@ -2,7 +2,7 @@
 
 
 #include "Collectable.h"
-
+#include "CollectManager.h"
 
 
 // Sets default values

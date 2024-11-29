@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "CollectManager.h"
 #include "GameFramework/Actor.h"
 #include "Collectable.generated.h"
 
