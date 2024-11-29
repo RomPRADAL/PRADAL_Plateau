@@ -30,14 +30,18 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float TimerDuration;
 
-	UFUNCTION(BlueprintCallable, Category = "Timer")
+	UFUNCTION(BlueprintCallable)
 	void StartTimer();
 	
-	UFUNCTION(BlueprintCallable, Category = "Timer")
+	UFUNCTION(BlueprintCallable)
 	void TimerEnd();
 
-	UFUNCTION(BlueprintCallable, Category = "Timer")
+	UFUNCTION(BlueprintCallable)
 	bool CheckWin();
+
+	//Fonction a implémenter en bp pour pouvoir atteindre facilement le score du gars
+	UFUNCTION(BlueprintImplementableEvent)
+	void WinScoreAction();
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<ACollectable*> CollectablesList;

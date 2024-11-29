@@ -44,16 +44,21 @@ bool ACollectManager::CheckWin()
 {
 	bool vPallierAtteint = false;
 
-	if (Score >= Pallier)
-	{
-		vPallierAtteint = true;
-	}
 
+	WinScoreAction();
 	//Alors j'ai jamais testé avant on va voir si ca marche
 	AGameModeBase* GameMode = GetWorld()->GetAuthGameMode();
 	GameMode->ProcessEvent(GameMode->FindFunction("SwitchToDefaultPawn"), nullptr);
 	GameMode->ProcessEvent(GameMode->FindFunction("ShowInfoWidget"), nullptr);
 	GameMode->ProcessEvent(GameMode->FindFunction("MoveCameraToBoard"), nullptr);
+	
+	
+	if (Score >= Pallier)
+	{
+		vPallierAtteint = true;
+		
+	}
+
 	return vPallierAtteint;
 }
 
